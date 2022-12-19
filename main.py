@@ -31,7 +31,7 @@ class TikTakToe:
             win, sign = self.win()
         if win == 1:
             self.show_board()
-            print(self.who[sign].name, ' won!')
+            print(self.who[sign].name, 'won!')
         else:
             self.show_board()
             print('Draw')
@@ -136,7 +136,8 @@ class SuperPlayer(Player):
 
     def get_move_hard_mode(self, board):
         if board.moves_num == 1:
-            return [0, 0, self.sign]
+            c = randint(0, 2)
+            return [0 + c, 0 + c, self.sign]
         board.moves_num -= 1
         end, xy = self.move_to_win(True, board)
         board.moves_num += 1
