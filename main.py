@@ -137,7 +137,7 @@ class SuperPlayer(Player):
     def get_move_hard_mode(self, board):
         if board.moves_num == 1:
             c = randint(0, 2)
-            return [0 + c, 0 + c, self.sign]
+            return [c, c, self.sign]
         board.moves_num -= 1
         end, xy = self.move_to_win(True, board)
         board.moves_num += 1
